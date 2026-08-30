@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <section class="home-hero site-shell">
+    <p class="eyebrow">DAVIS / ENGINEERING NOTES</p>
+    <h1>在变化的技术里，记录不易过时的工程判断。</h1>
+    <p>
+      关于 Agent、RAG、Java 后端与可靠软件工程。关注真实系统里的上下文、状态、权限、评测和恢复，而不只追逐框架名称。
+    </p>
+  </section>
+
+  <section class="post-section site-shell" aria-labelledby="latest-posts">
+    <div class="section-heading">
+      <h2 id="latest-posts">最新文章</h2>
+      <span>1 篇</span>
+    </div>
+
+    <a class="post-card" href="/posts/agent-anchor/">
+      <img
+        src="/assets/images/agent-anchor-cover.png"
+        alt="海面上的技术变化与海面下的工程锚点"
+        width="1672"
+        height="941"
+      />
+      <div class="post-card-body">
+        <div class="post-card-meta">2026-08-30 · Agent Engineering</div>
+        <h3>Agent 时代下的锚点</h3>
+        <p>从 Java 后端与企业知识检索实践出发，梳理 Agent 从 Demo 走向生产环境时不会轻易过时的八类工程能力。</p>
+        <span class="read-more">阅读全文 →</span>
+      </div>
+    </a>
+  </section>
+</BaseLayout>

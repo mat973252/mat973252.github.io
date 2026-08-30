@@ -1,0 +1,57 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+const {
+  title,
+  description,
+  date,
+  author = 'Davis',
+  tags = [],
+  cover,
+  coverAlt = '',
+  coverCaption = '',
+} = frontmatter;
+
+const publishedDate = date instanceof Date ? date : new Date(date);
+const dateValue = publishedDate.toISOString().slice(0, 10);
+const publishedAt = new Intl.DateTimeFormat('zh-CN', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+}).format(publishedDate);
+---
+
+<BaseLayout title={title} description={description} image={cover}>
+  <article class="article">
+    <a class="back-link" href="/">← 返回文章列表</a>
+
+    <header class="post-header">
+      <div class="eyebrow">AGENT ENGINEERING</div>
+      <h1>{title}</h1>
+      <p class="post-description">{description}</p>
+      <div class="post-meta">
+        <span>{author}</span>
+        <span aria-hidden="true">·</span>
+        <time datetime={dateValue}>{publishedAt}</time>
+        <span aria-hidden="true">·</span>
+        <span>约 10 分钟</span>
+      </div>
+      {tags.length > 0 && (
+        <div class="tag-list" aria-label="文章标签">
+          {tags.map((tag: string) => <span>{tag}</span>)}
+        </div>
+      )}
+      {cover && (
+        <figure class="cover-figure">
+          <img src={cover} alt={coverAlt} width="1672" height="941" />
+          {coverCaption && <figcaption>{coverCaption}</figcaption>}
+        </figure>
+      )}
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
