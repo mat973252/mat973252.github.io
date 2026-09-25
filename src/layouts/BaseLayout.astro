@@ -9,8 +9,8 @@ interface Props {
 
 const {
   title = 'Mat · Less magic. More runtime.',
-  description = '关于 Agent 系统、工具与可靠工程的实践记录。',
-  image = '/assets/images/agent-anchor-cover.png',
+  description = 'Mat builds the boring parts that keep AI agents alive — permissions, recovery, and evals.',
+  image = '/assets/images/mat-home-og.png',
 } = Astro.props;
 
 const pageTitle = title === 'Mat · Less magic. More runtime.' ? title : `${title} · Mat`;
@@ -28,6 +28,7 @@ const socialImage = new URL(image, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/images/mat-touch-icon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
@@ -39,24 +40,22 @@ const socialImage = new URL(image, Astro.site);
   <body>
     <header class="site-header">
       <div class="site-shell header-inner">
-        <a class="brand" href="/" aria-label="Mat 首页">
-          <img class="brand-avatar" src="/assets/images/mat-avatar.png" alt="" width="36" height="36" />
-          <span>mat<span class="brand-dot">.</span></span>
-        </a>
+        <a class="brand" href="/" aria-label="Mat 首页">mat<span class="brand-dot">.</span></a>
         <nav aria-label="主导航">
-          <a href="/#work">项目</a>
-          <a href="/#notes">笔记</a>
-          <a href="https://github.com/mat973252" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="/#work">work</a>
+          <a href="/#notes">notes</a>
+          <a href="https://github.com/mat973252" target="_blank" rel="noopener noreferrer">github</a>
         </nav>
       </div>
     </header>
-
-    <main>
-      <slot />
-    </main>
-
+    <main><slot /></main>
     <footer class="site-footer">
-      <div class="site-shell">© 2026 Mat · Built with care.</div>
+      <div class="site-shell footer-inner">
+        <a class="footer-brand" href="/">mat<span class="brand-dot">.</span></a>
+        <span>© 2026 Mat</span>
+        <a href="https://github.com/mat973252" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <span class="footer-thought">Better tools. Calmer days.<span class="mint-dot" aria-hidden="true"></span></span>
+      </div>
     </footer>
   </body>
 </html>

@@ -9,7 +9,7 @@ tags:
   - RAG
   - 系统工程
   - Java
-cover: "/assets/images/agent-anchor-cover.png"
+cover: "/assets/images/agent-anchor-cover.webp"
 coverAlt: "海面上的技术变化与海面下的工程锚点"
 coverCaption: "框架和热词像海面的浪，真正支撑 Agent 进入生产环境的，是海面下相对稳定的工程能力。"
 draft: false
