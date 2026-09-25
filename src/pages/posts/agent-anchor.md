@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 title: "Agent 时代下的锚点"
 description: "从 Java 后端与企业知识检索实践出发，梳理 Agent 从 Demo 走向生产环境时不会轻易过时的八类工程能力。"
 date: 2026-08-30
-author: Davis
+author: Mat
 tags:
   - AI Agent
   - RAG

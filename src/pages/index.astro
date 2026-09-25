@@ -4,31 +4,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout>
   <section class="home-hero site-shell">
-    <p class="eyebrow">DAVIS / ENGINEERING NOTES</p>
-    <h1>在变化的技术里，记录不易过时的工程判断。</h1>
-    <p>
-      关于 Agent、RAG、Java 后端与可靠软件工程。关注真实系统里的上下文、状态、权限、评测和恢复，而不只追逐框架名称。
-    </p>
+    <div class="hero-copy">
+      <p class="eyebrow">MAT / AGENT SYSTEMS</p>
+      <h1>Less magic.<br /><span>More runtime.</span></h1>
+      <p class="hero-description">我在做让 Agent 走出 Demo 后仍能可靠运行的工具：动作执行、状态恢复和质量验证。</p>
+      <div class="hero-tags" aria-label="关注方向">
+        <span>Agents</span><span>Tools</span><span>Evals</span><span>Recovery</span>
+      </div>
+    </div>
+    <img class="hero-avatar" src="/assets/images/mat-avatar.png" alt="Mat 的 M 标志" width="1254" height="1254" />
   </section>
 
-  <section class="post-section site-shell" aria-labelledby="latest-posts">
+  <section class="work-section site-shell" id="work" aria-labelledby="selected-work">
     <div class="section-heading">
-      <h2 id="latest-posts">最新文章</h2>
-      <span>1 篇</span>
+      <h2 id="selected-work">Selected work</h2>
+      <span>03 / OPEN SOURCE</span>
+    </div>
+    <div class="work-grid">
+      <a class="work-card" href="https://github.com/mat973252/agent-permit4j" target="_blank" rel="noreferrer">
+        <span class="work-number">01 / ACTION SAFETY</span>
+        <h3>AgentPermit4j <span aria-hidden="true">↗</span></h3>
+        <p>让关键动作先经授权，再安全执行。</p>
+        <span class="work-meta">Java · Policy · Approval</span>
+      </a>
+      <a class="work-card" href="https://github.com/mat973252/rag-contract4j" target="_blank" rel="noreferrer">
+        <span class="work-number">02 / TESTING</span>
+        <h3>RAGContract4j <span aria-hidden="true">↗</span></h3>
+        <p>把检索、权限与引用质量变成可重复的契约测试。</p>
+        <span class="work-meta">RAG · Contracts · Evals</span>
+      </a>
+      <a class="work-card" href="https://github.com/mat973252/claude-recovery-hooks" target="_blank" rel="noreferrer">
+        <span class="work-number">03 / RECOVERY</span>
+        <h3>Claude Recovery Hooks <span aria-hidden="true">↗</span></h3>
+        <p>在临时故障后，帮助 Claude Code 会话接着跑。</p>
+        <span class="work-meta">PowerShell · Hooks · Recovery</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="post-section site-shell" id="notes" aria-labelledby="latest-posts">
+    <div class="section-heading">
+      <h2 id="latest-posts">Notes</h2>
+      <span>01 / WRITING</span>
     </div>
 
     <a class="post-card" href="/posts/agent-anchor/">
-      <img
-        src="/assets/images/agent-anchor-cover.png"
-        alt="海面上的技术变化与海面下的工程锚点"
-        width="1672"
-        height="941"
-      />
       <div class="post-card-body">
-        <div class="post-card-meta">2026-08-30 · Agent Engineering</div>
+        <div class="post-card-meta">2026-08-30 / AGENT ENGINEERING</div>
         <h3>Agent 时代下的锚点</h3>
         <p>从 Java 后端与企业知识检索实践出发，梳理 Agent 从 Demo 走向生产环境时不会轻易过时的八类工程能力。</p>
-        <span class="read-more">阅读全文 →</span>
+        <span class="read-more">阅读全文 <span aria-hidden="true">↗</span></span>
       </div>
     </a>
   </section>
