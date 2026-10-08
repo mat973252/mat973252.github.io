@@ -59,6 +59,15 @@ nav a:hover, .footer-inner a:hover { text-decoration: underline; text-underline-
 .project-description { max-width: 530px; margin: 30px 0 36px; color: var(--muted); font-size: 16px; line-height: 1.75; }
 .text-link { display: inline-flex; gap: 28px; padding-bottom: 5px; border-bottom: 1px solid var(--ink); font-size: 14px; font-weight: 700; text-decoration: none; }
 .text-link:hover { color: #347d6c; border-color: #347d6c; }
+.project-status, .secondary-project .project-status { margin: 18px 0 24px; color: var(--muted); font-size: 12px; }
+.project-source { display: inline-block; margin: 12px 0 0 24px; color: var(--muted); font-size: 13px; text-underline-offset: 4px; }
+.project-case { display: inline-block; font-size: 13px; text-underline-offset: 4px; }
+.other-projects { padding: 25px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.other-projects summary { cursor: pointer; }
+.other-projects summary span { margin-left: 16px; color: var(--muted); font-size: 12px; }
+.other-projects > a { display: block; padding-top: 20px; text-decoration: none; }
+.other-projects > a span { display: block; color: var(--muted); font-size: 13px; }
+.other-projects > a:hover { color: #347d6c; }
 .architecture { display: flex; min-height: 485px; flex-direction: column; justify-content: space-between; padding: 34px 42px 28px; background: var(--ink); color: var(--paper); }
 .diagram-label, .diagram-foot { color: var(--mint); }
 .diagram-foot { font-size: 9px; }

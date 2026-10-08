@@ -2,13 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout description="Mat builds the boring parts that keep AI agents alive — permissions, recovery, and evals.">
+<BaseLayout description="Mat 的 Agent 工程实践：上下文交接、运行观测、可靠恢复与工具权限。">
   <section class="home-hero site-shell" aria-labelledby="hero-title">
     <div class="hero-copy">
       <p class="hero-kicker">DEVELOPER / BUILDER / LEARNER</p>
       <h1 id="hero-title">Less magic.<br /><em>More runtime.</em></h1>
-      <p class="hero-description">I build the boring parts that keep AI agents alive —<br class="desktop-break" /> permissions, recovery, and evals.</p>
-      <p class="hero-disciplines">RUNTIME <span>/</span> TOOLS <span>/</span> RECOVERY <span>/</span> EVALS <span>/</span> RELIABLE SYSTEMS</p>
+      <p class="hero-description">让 Agent 的任务交接更清楚，运行有据可查，<br class="desktop-break" />恢复与执行有明确边界。</p>
+      <p class="hero-disciplines">CONTEXT <span>/</span> OBSERVABILITY <span>/</span> RECOVERY <span>/</span> PERMISSIONS</p>
     </div>
     <div class="hero-structure" aria-hidden="true">
       <div class="structure-slab structure-slab-back"></div>
@@ -21,66 +21,96 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <aside class="now-strip site-shell" aria-label="Currently building">
     <span class="now-label">NOW</span>
-    <span class="now-current"><span class="mint-dot" aria-hidden="true"></span>Building Relay</span>
-    <span class="now-description">Durable execution for long-running agents.</span>
+    <span class="now-current"><span class="mint-dot" aria-hidden="true"></span>ctxpack &amp; AgentLens</span>
+    <span class="now-description">近期重点：任务交接与运行证据。<time datetime="2026-10-08">更新于 2026.10.08</time></span>
   </aside>
 
   <section class="work-section site-shell" id="work" aria-labelledby="selected-work">
     <div class="section-heading">
       <p class="section-index">01 / WORK</p>
       <h2 id="selected-work">Selected work<span class="mint-period">.</span></h2>
-      <p>Systems for the moments<br />when software must hold.</p>
+      <p>从交接到执行，<br />把可靠性落在具体工具里。</p>
     </div>
     <article class="featured-project">
       <div class="featured-copy">
         <span class="project-number">01 / FEATURED PROJECT</span>
-        <h3>AgentPermit4j</h3>
-        <p class="project-tagline">Guardrails for the part of an agent that can actually break things.</p>
-        <p class="project-description">A trusted action execution layer for Java agents. It places authorization, risk policy, exact-call approval, idempotency, and audit between a proposed action and the code that executes it.</p>
-        <a class="text-link" href="https://github.com/mat973252/agent-permit4j" target="_blank" rel="noopener noreferrer">Explore the project <span aria-hidden="true">↗</span></a>
+        <h3>ctxpack</h3>
+        <p class="project-tagline">换一个会话，<br />接着把事情做完。</p>
+        <p class="project-description">面向 Coding Agent 的本地上下文交接工具。保存目标、进度、决策与失败经验，核对 Git 快照，再生成下一位 Agent 能读懂的交接文档。</p>
+        <p class="project-status">已发布 v0.1.0 · CLI / TUI</p>
+        <a class="text-link" href="/posts/ctxpack-handoff/">看一个交接示例 <span aria-hidden="true">↗</span></a>
+        <a class="project-source" href="https://github.com/mat973252/ctxpack" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
-      <div class="architecture" role="img" aria-label="Proposed action flows through policy, approval, execution, and audit">
-        <span class="diagram-label">THE ACTION BOUNDARY</span>
+      <div class="architecture" role="img" aria-label="初始化、记录目标、采集快照、核对状态、生成交接文档">
+        <span class="diagram-label">THE HANDOFF PATH</span>
         <ol>
-          <li><span>01</span>Proposal</li>
-          <li><span>02</span>Policy</li>
-          <li><span>03</span>Approval</li>
-          <li><span>04</span>Execute</li>
-          <li><span>05</span>Audit</li>
+          <li><span>01</span>Init</li>
+          <li><span>02</span>Write context</li>
+          <li><span>03</span>Capture</li>
+          <li><span>04</span>Validate</li>
+          <li><span>05</span>Handoff</li>
         </ol>
-        <span class="diagram-foot">CONTROL BEFORE CONSEQUENCE</span>
+        <span class="diagram-foot">CONTEXT BEFORE CONTINUATION</span>
       </div>
-      <p class="project-metadata">JAVA 21 <span>/</span> SPRING AI <span>/</span> POLICY <span>/</span> APPROVAL</p>
+      <p class="project-metadata">LOCAL FIRST <span>/</span> GIT SNAPSHOT <span>/</span> PORTABLE CONTEXT</p>
     </article>
     <div class="secondary-projects">
       <article class="secondary-project">
-        <span class="project-number">02 / EXPERIMENTAL</span>
+        <span class="project-number">02 / OBSERVABILITY</span>
         <div>
-          <h3>RAGContract4j</h3>
-          <p class="secondary-tagline">Make bad retrieval fail CI, not production.</p>
-          <p>Turns retrieval, authorization, and citation requirements into repeatable quality gates.</p>
+          <h3>AgentLens</h3>
+          <p class="secondary-tagline">运行发生了什么，留下证据再判断。</p>
+          <p>本地查看与对比 Agent 运行记录，从事件中检查失败与循环信号，为调试提供可追溯的依据。</p>
+          <p class="project-status">已发布 v0.1.0 · 本地运行观测</p>
         </div>
-        <a class="project-arrow" href="https://github.com/mat973252/rag-contract4j" target="_blank" rel="noopener noreferrer" aria-label="View RAGContract4j on GitHub">↗</a>
+        <a class="project-arrow" href="https://github.com/mat973252/agentlens" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 查看 AgentLens">↗</a>
       </article>
       <article class="secondary-project">
-        <span class="project-number">03 / TOOL</span>
+        <span class="project-number">03 / RECOVERY</span>
         <div>
-          <h3>Claude Recovery Hooks</h3>
-          <p class="secondary-tagline">Claude died.<br />The task didn't have to.</p>
-          <p>PowerShell hooks for recovering Claude Code sessions after transient upstream failures.</p>
+          <h3>Relay</h3>
+          <p class="secondary-tagline">结果不确定时，先核对，再恢复。</p>
+          <p>记录外部操作的执行状态，处理退出与恢复中的歧义。RelayMuse 是这条路线上的 Agent 实验案例。</p>
+          <p class="project-status">已发布 v0.1.1 · 最新故障矩阵为本地实验</p>
+          <a class="project-case" href="/posts/relay-recovery/">阅读恢复案例 ↗</a>
         </div>
-        <a class="project-arrow" href="https://github.com/mat973252/claude-recovery-hooks" target="_blank" rel="noopener noreferrer" aria-label="View Claude Recovery Hooks on GitHub">↗</a>
+        <a class="project-arrow" href="https://github.com/mat973252/Relay" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 查看 Relay">↗</a>
+      </article>
+      <article class="secondary-project">
+        <span class="project-number">04 / PERMISSIONS</span>
+        <div>
+          <h3>AgentPermit4j</h3>
+          <p class="secondary-tagline">把执行权限放在工具调用之前。</p>
+          <p>面向 Java / Spring AI 的动作执行层，在工具调用前落实授权、风险检查与审批，并提供幂等和审计。</p>
+          <p class="project-status">已发布 v0.5.0 · Maven Central</p>
+        </div>
+        <a class="project-arrow" href="https://github.com/mat973252/agent-permit4j" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 查看 AgentPermit4j">↗</a>
       </article>
     </div>
+    <details class="other-projects">
+      <summary>其他项目 <span>检索质量与会话恢复</span></summary>
+      <a href="https://github.com/mat973252/rag-contract4j" target="_blank" rel="noopener noreferrer">RAGContract4j <span>检索、权限与引用的质量检查 · 实验项目 ↗</span></a>
+      <a href="https://github.com/mat973252/claude-recovery-hooks" target="_blank" rel="noopener noreferrer">Claude Recovery Hooks <span>Claude Code 瞬时故障恢复的 PowerShell 工具 ↗</span></a>
+    </details>
   </section>
 
   <section class="post-section site-shell" id="notes" aria-labelledby="latest-posts">
     <div class="section-heading">
       <p class="section-index">02 / NOTES</p>
       <h2 id="latest-posts">Field notes<span class="mint-period">.</span></h2>
-      <p>Writing on agents,<br />systems, and what lasts.</p>
+      <p>具体的问题、做法，<br />以及证据能说明的范围。</p>
     </div>
     <div class="notes-columns" aria-hidden="true"><span>DATE</span><span>TITLE / DESCRIPTION</span><span>READ</span></div>
+    <a class="note-entry" href="/posts/ctxpack-handoff/">
+      <time datetime="2026-10-08">08 OCT 2026</time>
+      <span class="note-content"><strong>ctxpack：让下一次会话接得上</strong><span>从目标记录到 Git 快照核对，一份可检查的交接文档如何生成。</span></span>
+      <span class="note-arrow" aria-hidden="true">↗</span>
+    </a>
+    <a class="note-entry" href="/posts/relay-recovery/">
+      <time datetime="2026-10-08">08 OCT 2026</time>
+      <span class="note-content"><strong>Relay：请求之后，进程退出了</strong><span>一次真实 GitHub API 与客户端故障注入实验，观察 UNKNOWN 如何保持或被核对确认。</span></span>
+      <span class="note-arrow" aria-hidden="true">↗</span>
+    </a>
     <a class="note-entry" href="/posts/agent-anchor/">
       <time datetime="2026-08-30">30 AUG 2026</time>
       <span class="note-content"><strong>Agent 时代下的锚点</strong><span>从 Java 后端与企业知识检索实践出发，梳理 Agent 从 Demo 走向生产环境时不会轻易过时的八类工程能力。</span></span>
